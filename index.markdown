@@ -12,14 +12,14 @@ excerpt: "Your ultimate destination for passionate sports coverage across all ma
 intro: 
   - excerpt: 'Covering the biggest matches, transfer news, and expert analysis with unmatched passion'
 feature_row:
-  - image_path: /assets/images/barcelona.jpg
+  - image_path: /assets/images/soccer-action.png
     alt: "Barcelona"
     title: "La Liga Coverage"
     excerpt: "All the latest from Spanish football"
     url: "/la-liga/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/real-madrid-logo.png
+  - image_path: /assets/images/soccer-action.png
     alt: "Real Madrid"
     title: "Champions League"
     excerpt: "European football's premier competition"
@@ -37,6 +37,12 @@ feature_row:
 
 {% include feature_row id="intro" type="center" %}
 {% include feature_row %}
+
+## Latest Video
+
+<div class="video-container">
+  <iframe width="100%" height="400" src="https://www.youtube.com/watch?v=PucprA-yZRs&t=9s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Recent Posts
 
