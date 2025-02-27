@@ -51,7 +51,7 @@ defaults:
       share: true
       related: true
 
-# Add this new scetion for pages
+# Pages
 - scope:
     path: ""
     type: pages
@@ -59,13 +59,17 @@ defaults:
     layout: single
     author_profile: fales
 
-# Add this for match reports specifically
+# Match reports
 - scope:
     path: "_posts"
     type: posts
   values:
     layout: match_reports
     categories: [soccer]
+
+# Include additional dirs
+include:
+  - _pages
 
 # Main navigation links
 main:
