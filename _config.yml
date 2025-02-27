@@ -33,6 +33,10 @@ plugins:
 # Add to _config.yml
 minimal_mistakes_skin: "neon" # Options: default, air, contrast, dark, dirt, mint, sunrise, aqua, neon, plum
 
+# Add this to your _config.yml
+masthead_logo: "/assets/images/logo.png"  # Adjust path as needed
+logo: "/assets/images/logo.png"  # Adjust path as needed
+
 # Navigation
 defaults:
   # _posts
