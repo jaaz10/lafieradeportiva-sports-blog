@@ -1,0 +1,151 @@
+---
+layout: single
+---
+
+<div class="match-report">
+  <div class="match-header">
+    <div class="team home">
+      <img src="{{ page.home_team_logo }}" alt="{{ page.home_team }} logo" class="team-logo">
+      <h3 class="team-name">{{ page.home_team }}</h3>
+      <span class="score">{{ page.home_score }}</span>
+    </div>
+
+    <div class="match-info">
+      <span class="match-date">{{ page.match_date | date: "%b %d, %Y" }}</span>
+      <span class="match-venue">{{ page.venue }}</span>
+    </div>
+
+    <div class="team away">
+      <span class="score">{{ page.away_score }}</span>
+      <h3 class="team-name">{{ page.away_team }}</h3>
+      <img src="{{ page.away_team_logo }}" alt="{{ page.away_team }} logo" class="team-logo">
+    </div>
+  </div>
+
+  <div class="match-content">
+    {{ content }}
+  </div>
+
+  {% if page.highlights %}
+  <div class="match-highlights">
+    <h3>Match Highlights</h3>
+    <ul>
+      {% for highlight in page.highlights %}
+      <li>
+        <span class="minute">{{ highlight.minute }}'</span>
+        <span class="description">{{ highlight.description }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  {% if page.stats %}
+  <div class="match-stats">
+    <h3>Match Statistics</h3>
+    <table>
+      <tr>
+        <th>{{ page.home_team }}</th>
+        <th>Stat</th>
+        <th>{{ page.away_team }}</th>
+      </tr>
+      {% for stat in page.stats %}
+      <tr>
+        <td>{{ stat.home }}</td>
+        <td>{{ stat.name }}</td>
+        <td>{{ stat.away }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+</div>
+
+{{ content }}
+
+{% if site.comments.provider and page.comments %}
+{% include comments.html %}
+{% endif %}
+
+<style>
+  .match-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2em;
+    background-color: #f9f9f9;
+    padding: 1em;
+    border-radius: 5px;
+  }
+
+  .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+  }
+
+  .team-logo {
+    max-width: 80px;
+    height: auto;
+  }
+
+  .score {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  .match-info {
+    text-align: center;
+    width: 40%;
+  }
+
+  .match-info span {
+    display: block;
+  }
+
+  .match-highlights,
+  .match-stats {
+    margin-top: 2em;
+    padding: 1em;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+
+  .match-highlights ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .match-highlights li {
+    margin-bottom: 0.5em;
+  }
+
+  .minute {
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+
+  .match-stats table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .match-stats th,
+  .match-stats td {
+    text-align: center;
+    padding: 0.5em;
+  }
+
+  @media (max-width: 768px) {
+    .match-header {
+      flex-direction: column;
+    }
+
+    .team,
+    .match-info {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  }
+</style>

@@ -51,6 +51,22 @@ defaults:
       share: true
       related: true
 
+# Add this new scetion for pages
+- scope:
+    path: ""
+    type: pages
+  values:
+    layout: single
+    author_profile: fales
+
+# Add this for match reports specifically
+- scope:
+    path: "_posts"
+    type: posts
+  values:
+    layout: match_reports
+    categories: [soccer]
+
 # Main navigation links
 main:
   - title: "Home"
@@ -59,6 +75,8 @@ main:
     url: /soccer/
   - title: "Basketball"
     url: /basketball/
+  - title: "Scoreboard"
+    url: /scoreboard/
   - title: "About"
     url: /about/
 
@@ -69,7 +87,7 @@ author:
   links:
     - label: "X"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://x.com/hernanespn"
+url: "https://x.com/hernanespn"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/lafieradeportiva/?hl=en"
@@ -88,3 +106,5 @@ footer:
     - label: "Youtube"
       icon: "fab fa-fw fa-youtube"
       url: "https://www.youtube.com/user/hernancitohesjr"
+
+
